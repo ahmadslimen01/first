@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    const T=[];
+    let s,max,min;
+function calculer() {
+    let x = parseInt(document.getElementById("x").value);
+    T.push(x);
+    document.getElementById("tab").innerHTML = T;
+    if (T.length==1)
+    {
+        min=x;
+        max=x;
+        s=x;
+    }
+    else{
+        if(min>x)
+            min=x;
+        if(max<x)
+            max=x;
+        s += x;
+    }
+
+    
+    document.getElementById("min").innerHTML =min;
+    document.getElementById("max").innerHTML =max;
+    document.getElementById("somme").innerHTML =s;
+    document.getElementById("trie").innerHTML=T.sort(function(a, b){return a - b});
+    document.getElementById("x").value="";
+}
+</script>
+
+</head>
+<body>
+<p  >donner un entier:<input type="number" id="x" onchange="calculer()"><br></p>
+<p  >T : <label id="tab"></label> </p>
+<p  >min : <label id="min"></label></p>
+<p  >max : <label id="max"></label></p>
+<p  >somme : <label id="somme"></label></p>
+<p  >Trie : <label id="trie"></label></p>
+</body>
+</html>  
+
+
+ 1 h 43 m 54 s
+
